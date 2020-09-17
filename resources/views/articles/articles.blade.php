@@ -19,6 +19,7 @@
         </div>
       </div>
     @endforeach
+    {{$articles->links()}}
   @else
     <p>No articles found</p>
   @endif

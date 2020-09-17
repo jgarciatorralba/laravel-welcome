@@ -37324,7 +37324,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 var url = window.location.href;
-var items = ['articles', 'login', 'register'];
+var items = ['articles', 'login', 'register', 'create'];
 items.forEach(function (item) {
   if (url.includes(item)) {
     document.querySelectorAll('.nav-link').forEach(function (navlink) {

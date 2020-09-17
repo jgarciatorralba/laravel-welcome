@@ -1,5 +1,5 @@
 const url = window.location.href;
-const items = ['articles', 'login', 'register'];
+const items = ['articles', 'login', 'register', 'create'];
 
 items.forEach(item => {
     if (url.includes(item)) {

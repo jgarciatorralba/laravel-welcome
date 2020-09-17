@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mb-5">
   <h1>Articles</h1>
   @if (count($articles) > 0)
     @foreach ($articles as $article)

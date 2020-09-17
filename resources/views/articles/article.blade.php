@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mb-5">
   <div class="card">
     <div class="card-header">
       <h1 class="card-title my-3">{{$article->title}}</h1>

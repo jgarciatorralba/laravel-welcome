@@ -37264,7 +37264,10 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Custom JS files
+
+
+__webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
 
 /***/ }),
 
@@ -37310,6 +37313,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/navbar.js":
+/*!********************************!*\
+  !*** ./resources/js/navbar.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var url = window.location.href;
+var items = ['articles', 'login', 'register'];
+items.forEach(function (item) {
+  if (url.includes(item)) {
+    document.querySelectorAll('.nav-link').forEach(function (navlink) {
+      navlink.classList.remove('active');
+    });
+    document.getElementById(item).classList.add('active');
+  }
+});
 
 /***/ }),
 

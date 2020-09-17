@@ -29,9 +29,9 @@
         <div class="form-group">
           <textarea class="form-control" name="subject" id="subject" cols="30" rows="10" form="contactForm" placeholder="Subject (min. 55 characters)"></textarea>
         </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-          <a class="btn btn-secondary btn-lg ml-1" href="/" role="button">Back</a>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a class="btn btn-secondary ml-1" href="/" role="button">Back</a>
         </div>
       </form>
     </div>

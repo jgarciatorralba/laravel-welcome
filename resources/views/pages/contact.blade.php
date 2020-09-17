@@ -12,7 +12,7 @@
       <h1 class="text-center my-3">
         Contact Form
       </h1>
-      <form method="POST" action="/contact" id="contentForm" autocomplete="off">
+      <form method="POST" action="/contact" id="contactForm" autocomplete="off">
         @csrf
         <div class="form-group">
           <input class="form-control" type="text" name="first-name" id="first-name" placeholder="First Name">
@@ -27,7 +27,7 @@
           <input class="form-control" type="number" name="age" id="age" placeholder="Age">
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="subject" id="subject" cols="30" rows="10" form="contentForm" placeholder="Subject (min. 55 characters)"></textarea>
+          <textarea class="form-control" name="subject" id="subject" cols="30" rows="10" form="contactForm" placeholder="Subject (min. 55 characters)"></textarea>
         </div>
         <div class="text-center">
           <button type="submit" class="btn btn-primary btn-lg">Submit</button>

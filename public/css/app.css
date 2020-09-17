@@ -10903,3 +10903,8 @@ a.text-dark:focus {
   height: calc(100vh - 3rem - 4rem);
 }
 
+.nav-item {
+  position: relative;
+  top: 0.1rem;
+}
+

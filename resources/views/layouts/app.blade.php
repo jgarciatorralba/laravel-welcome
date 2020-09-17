@@ -30,7 +30,7 @@
             @yield('content')
         </main>
 
-        <footer class="footer mt-auto py-3 fixed-bottom bg-white">
+        <footer>
             @include('includes.footer')
         </footer>
     </div>

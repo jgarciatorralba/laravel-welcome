@@ -28,3 +28,5 @@ Route::get('/contact', 'PagesController@contact');
 
 use App\Http\Controllers\FormsController;
 Route::post('/contact', 'FormsController@send');
+
+Route::resource('articles', 'ArticlesController');

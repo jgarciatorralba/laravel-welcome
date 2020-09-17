@@ -53,7 +53,7 @@ class ArticlesController extends Controller
         $article->slug = Str::slug($article->title, '-');
         $article->save();
 
-        return redirect('/articles')->with('success', 'Article created successfully!');
+        return redirect('/articles')->with('success', 'Article created!');
     }
 
     /**
@@ -78,9 +78,14 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $articles = Article::where('slug', $slug)->get();
+        if (count($articles) > 0){
+            return view('articles.edit')->with('article', $articles[0]);
+        } else {
+            abort(404);
+        }
     }
 
     /**
@@ -92,7 +97,20 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'summary' => 'required',
+            'content' => 'required|min:2000'
+        ]);
+
+        $article = Article::find($id);
+        $article->title = $request->input('title');
+        $article->summary = $request->input('summary');
+        $article->content = $request->input('content');
+        $article->slug = Str::slug($article->title, '-');
+        $article->save();
+
+        return redirect('/articles')->with('success', 'Article updated!');
     }
 
     /**
@@ -103,6 +121,9 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        return redirect('/articles')->with('success', 'Article removed!');
     }
 }

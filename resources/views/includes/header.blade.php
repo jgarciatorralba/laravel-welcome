@@ -11,10 +11,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a id="home" class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/articles">Articles</a>
+                    <a id="articles" class="nav-link" href="/articles">Articles</a>
                 </li>
             </ul>
 
@@ -23,11 +23,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a id="login" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a id="register" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
@@ -53,3 +53,17 @@
         </div>
     </div>
 </nav>
+
+<script>
+    const url = window.location.href;
+
+    items = ['articles', 'login', 'register'];
+    items.forEach(item => {
+        if (url.includes(item)) {
+            document.querySelectorAll('.nav-link').forEach(navlink => {
+                navlink.classList.remove('active');
+            });
+            document.getElementById(item).classList.add('active');
+        }
+    })
+</script>

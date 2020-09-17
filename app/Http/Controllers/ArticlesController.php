@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 // Bring in the model
 use App\Article;
+// Bring in the helper methods class
+use Illuminate\Support\Str;
 
 class ArticlesController extends Controller
 {
@@ -38,7 +40,20 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'summary' => 'required',
+            'content' => 'required|min:2000'
+        ]);
+
+        $article = new Article();
+        $article->title = $request->input('title');
+        $article->summary = $request->input('summary');
+        $article->content = $request->input('content');
+        $article->slug = Str::slug($article->title, '-');
+        $article->save();
+
+        return redirect('/articles')->with('success', 'Article created successfully!');
     }
 
     /**

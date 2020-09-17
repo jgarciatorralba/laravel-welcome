@@ -40,6 +40,12 @@
                 top: 18px;
             }
 
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+
             .content {
                 text-align: center;
             }
@@ -66,6 +72,11 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
+                <div class="top-left links">
+                    <a href="{{ url('/project') }}">Project</a>
+                    <a href="{{ url('/contact') }}">Contact</a>
+                </div>
+
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>

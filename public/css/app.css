@@ -10900,6 +10900,6 @@ a.text-dark:focus {
 }
 
 .wrapper {
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 3rem - 4rem);
 }
 

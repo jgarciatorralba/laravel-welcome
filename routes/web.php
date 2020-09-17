@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Additional routing created during the project realization
+use App\Http\Controllers\PagesController;
+Route::get('/project', 'PagesController@project');
+Route::get('/contact', 'PagesController@contact');

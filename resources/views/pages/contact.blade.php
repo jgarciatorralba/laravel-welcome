@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="d-flex justify-content-center align-items-center align-self-center flex-nowrap m-5 p-3">
+  @if (isset($confirmation))
+    <div class="container alert alert-success">
+      <p class="my-0">{{$confirmation}}</p>
+    </div>
+  @endif
+
+  <div class="d-flex justify-content-center align-items-center align-self-center flex-nowrap mb-5 pb-3">
     <div class="container col-6">
       <h1 class="text-center my-3">
         Contact Form
@@ -21,7 +27,7 @@
           <input class="form-control" type="number" name="age" id="age" placeholder="Age">
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="body" id="body" cols="30" rows="10" form="contentForm" placeholder="Subject (min. 55 characters)"></textarea>
+          <textarea class="form-control" name="subject" id="subject" cols="30" rows="10" form="contentForm" placeholder="Subject (min. 55 characters)"></textarea>
         </div>
         <div class="text-center">
           <button type="submit" class="btn btn-primary btn-lg">Submit</button>

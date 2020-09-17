@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Bring in the model
+use App\Article;
+
 class ArticlesController extends Controller
 {
     /**
@@ -13,7 +16,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        return view('articles.articles')->with('articles', $articles);
     }
 
     /**
@@ -43,9 +47,9 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        return Article::where('slug', $slug)->get();
     }
 
     /**

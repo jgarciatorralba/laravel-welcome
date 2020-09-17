@@ -49,7 +49,8 @@ class ArticlesController extends Controller
      */
     public function show($slug)
     {
-        return Article::where('slug', $slug)->get();
+        $articles = Article::where('slug', $slug)->get();
+        return view('articles.article')->with('article', $articles[0]);
     }
 
     /**

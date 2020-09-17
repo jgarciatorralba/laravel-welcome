@@ -16,7 +16,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'desc')->paginate(2);
         return view('articles.articles')->with('articles', $articles);
     }
 
@@ -50,7 +50,11 @@ class ArticlesController extends Controller
     public function show($slug)
     {
         $articles = Article::where('slug', $slug)->get();
-        return view('articles.article')->with('article', $articles[0]);
+        if (count($articles) > 0){
+            return view('articles.article')->with('article', $articles[0]);
+        } else {
+            abort(404);
+        }
     }
 
     /**

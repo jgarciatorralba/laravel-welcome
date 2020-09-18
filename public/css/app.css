@@ -10915,3 +10915,13 @@ a.text-dark:focus {
   bottom: 0.1rem;
 }
 
+td.title p {
+  position: relative;
+  top: 0.2rem;
+}
+
+.nav-link::after {
+  position: relative;
+  top: 0.15rem;
+}
+

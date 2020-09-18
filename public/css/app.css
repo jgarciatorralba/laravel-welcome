@@ -10908,3 +10908,10 @@ a.text-dark:focus {
   top: 0.1rem;
 }
 
+.bi-journal-text,
+.bi-journal-minus,
+.bi-journal-plus {
+  position: relative;
+  bottom: 0.1rem;
+}
+

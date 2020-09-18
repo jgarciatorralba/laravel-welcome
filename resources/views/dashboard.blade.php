@@ -24,7 +24,7 @@
                         New Article
                     </a>
                     <hr>
-                    <h3>Your Blog Articles</h3>
+                    <h3>Your Articles</h3>
                     @if(count($articles) > 0)
                         <table class="table table-striped">
                             <tr>

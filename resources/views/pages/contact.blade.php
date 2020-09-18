@@ -31,7 +31,7 @@
         </div>
         <div class="mb-3">
           <button type="submit" class="btn btn-primary">Submit</button>
-          <a class="btn btn-secondary ml-1" href="/" role="button">Back</a>
+          <a class="btn btn-secondary ml-1" href="/project" role="button">Cancel</a>
         </div>
       </form>
     </div>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top border border-bottom">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="text-muted navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -10,11 +10,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a id="home" class="nav-link" href="/">
-                        Home
-                    </a>
-                </li>
                 @guest
                     <li class="nav-item">
                         <a id="project" class="nav-link" href="/project">

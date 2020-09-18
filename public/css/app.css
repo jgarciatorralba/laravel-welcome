@@ -10925,3 +10925,7 @@ td.title p {
   top: 0.15rem;
 }
 
+.navbar-brand:hover {
+  color: black !important;
+}
+

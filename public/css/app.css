@@ -10927,5 +10927,6 @@ td.title p {
 
 .navbar-brand:hover {
   color: black !important;
+  cursor: pointer;
 }
 

@@ -72,38 +72,29 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-left links">
-                    <a href="{{ url('/project') }}">Project</a>
-                    <a href="{{ url('/contact') }}">Contact</a>
-                </div>
-
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
+                @auth
+                    <div class="top-right links">
+                        <a href="{{ url('/dashboard') }}">
+                            Dashboard
+                        </a>
+                    </div>
+                @else
+                    <div class="top-left links">
+                        <a href="{{ url('/project') }}">
+                            The Project
+                        </a>
+                    </div>
+                @endauth
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div>
+                    <p style="font-size: 1.5rem;">
+                        An introductory exercise
+                    </p>
                 </div>
             </div>
         </div>

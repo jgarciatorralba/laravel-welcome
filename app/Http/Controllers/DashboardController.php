@@ -34,6 +34,6 @@ class DashboardController extends Controller
         /*
             Pass in the view the user's articles (thanks to the methods enabled by the relationship).
         */
-        return view('dashboard')->with('articles', $user->articles);
+        return view('dashboard')->with('articles', $user->articles()->orderBy('updated_at', 'desc')->get());
     }
 }

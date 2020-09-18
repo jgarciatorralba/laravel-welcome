@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Auth;
 class ArticlesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -84,6 +94,12 @@ class ArticlesController extends Controller
     public function edit($slug)
     {
         $articles = Article::where('slug', $slug)->get();
+
+        // Check for the correct user
+        if (Auth::id() !== $articles[0]->user_id) {
+            return redirect('/articles')->with('error', 'Unauthorized page');
+        }
+
         if (count($articles) > 0){
             return view('articles.edit')->with('article', $articles[0]);
         } else {
@@ -125,6 +141,12 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         $article = Article::find($id);
+
+        // Check for the correct user
+        if (Auth::id() !== $article->user_id) {
+            return redirect('/articles')->with('error', 'Unauthorized page');
+        }
+
         $article->delete();
 
         return redirect('/articles')->with('success', 'Article removed!');

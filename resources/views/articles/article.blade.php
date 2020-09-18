@@ -20,7 +20,7 @@
       </div>
       <hr class="my-0">
       <div class="mt-3">
-        <a class="btn btn-primary" href="/articles/{{$article->slug}}/edit">
+        <a class="btn btn-primary mr-2" href="/articles/{{$article->slug}}/edit">
           Edit
         </a>
         <form class="d-inline" action="/articles/{{$article->id}}" method="POST">

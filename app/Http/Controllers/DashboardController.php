@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Bring in the authentication facade
+use Illuminate\Support\Facades\Auth;
+// Bring in the user model
+use App\User;
+
 class DashboardController extends Controller
 {
     /**
@@ -23,6 +28,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        // Get the currently authenticated user.
+        $user = Auth::user();
+
+        /*
+            Pass in the view the user's articles (thanks to the methods enabled by the relationship).
+        */
+        return view('dashboard')->with('articles', $user->articles);
     }
 }

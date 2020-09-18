@@ -14,8 +14,12 @@
       <hr class="my-0">
       <div class="mt-3">
         <small>
-          <p class="mb-1">Written on {{$article->created_at}}</p>
-          <p class="mb-3">Last modified on {{$article->updated_at}}</p>
+          <p class="mb-1">
+            Written on {{$article->created_at}}  by {{$article->user->name}}
+          </p>
+          <p class="mb-3">
+            Last modified on {{$article->updated_at}}  by {{$article->user->name}}
+          </p>
         </small>
       </div>
       <hr class="my-0">

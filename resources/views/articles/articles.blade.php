@@ -15,7 +15,9 @@
         </div>
         <div class="card-body">
           <p class="card-text">{{$article->summary}}</p>
-          <small>Written on {{$article->created_at}}</small>
+          <small>
+            Written on {{$article->created_at}} by {{$article->user->name}}
+          </small>
         </div>
       </div>
     @endforeach

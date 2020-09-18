@@ -34,7 +34,9 @@
                             </tr>
                             @foreach ($articles as $article)
                                 <tr>
-                                    <td>{{$article->title}}</td>
+                                    <td class="title">
+                                        <p class="mb-0">{{$article->title}}</p>
+                                    </td>
                                     <td class="text-center">
                                         <a class="btn btn-sm btn-primary" href="/articles/{{$article->slug}}/edit">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

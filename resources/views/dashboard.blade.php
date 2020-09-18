@@ -25,6 +25,34 @@
                     </a>
                     <hr>
                     <h3>Your Blog Articles</h3>
+                    @if(count($articles) > 0)
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Title</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            @foreach ($articles as $article)
+                                <tr>
+                                    <td>{{$article->title}}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-sm btn-primary" href="/articles/{{$article->slug}}/edit">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <form class="d-inline" action="/articles/{{$article->id}}" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="submit" value="Delete" class="btn btn-sm btn-secondary">
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @else
+                        <p class="my-0">You have no articles published yet</p>
+                    @endif
                 </div>
             </div>
         </div>

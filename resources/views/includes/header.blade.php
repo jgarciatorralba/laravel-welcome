@@ -14,11 +14,18 @@
                     <li class="nav-item">
                         <a id="home" class="nav-link" href="/">Home</a>
                     </li>
-                @else
+                    <li class="nav-item">
+                        <a id="project" class="nav-link" href="/project">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact" class="nav-link" href="/contact">Contact</a>
+                    </li>
+                @endguest
+                {{-- @else --}}
                     <li class="nav-item">
                         <a id="articles" class="nav-link" href="/articles">Articles</a>
                     </li>
-                @endguest
+                {{-- @endguest --}}
             </ul>
 
             <!-- Right Side Of Navbar -->

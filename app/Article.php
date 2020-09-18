@@ -19,4 +19,9 @@ class Article extends Model
 
     // Timestamps (set to "true" by default)
     public $timestamps = true;
+
+    // Create a relationship with table 'users'
+    public function user(){
+        return $this->belongsTo('App\User')->withDefault();
+    }
 }

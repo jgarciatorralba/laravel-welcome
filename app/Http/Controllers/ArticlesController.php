@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Article;
 // Bring in the helper methods class
 use Illuminate\Support\Str;
+// Bring in the authentication facade
+use Illuminate\Support\Facades\Auth;
 
 class ArticlesController extends Controller
 {
@@ -51,6 +53,7 @@ class ArticlesController extends Controller
         $article->summary = $request->input('summary');
         $article->content = $request->input('content');
         $article->slug = Str::slug($article->title, '-');
+        $article->user_id = Auth::id();
         $article->save();
 
         return redirect('/articles')->with('success', 'Article created!');

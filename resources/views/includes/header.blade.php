@@ -10,22 +10,28 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a id="home" class="nav-link" href="/">
+                        Home
+                    </a>
+                </li>
                 @guest
                     <li class="nav-item">
-                        <a id="home" class="nav-link" href="/">Home</a>
+                        <a id="project" class="nav-link" href="/project">
+                            Project
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a id="project" class="nav-link" href="/project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="contact" class="nav-link" href="/contact">Contact</a>
+                        <a id="contact" class="nav-link" href="/contact">
+                            Contact
+                        </a>
                     </li>
                 @endguest
-                {{-- @else --}}
-                    <li class="nav-item">
-                        <a id="articles" class="nav-link" href="/articles">Articles</a>
-                    </li>
-                {{-- @endguest --}}
+                <li class="nav-item">
+                    <a id="articles" class="nav-link" href="/articles">
+                        Articles
+                    </a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

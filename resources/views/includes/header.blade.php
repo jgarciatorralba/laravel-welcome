@@ -29,7 +29,7 @@
                 @endguest
                 <li class="nav-item">
                     <a id="articles" class="nav-link" href="/articles">
-                        Articles
+                        Blog
                     </a>
                 </li>
             </ul>
@@ -56,9 +56,7 @@
                             <a class="dropdown-item" href="/dashboard">
                                 Dashboard
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{route('logout')}} "onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mb-5">
-  <h1>Articles</h1>
+  <h1>Entries</h1>
   @if (count($articles) > 0)
     @foreach ($articles as $article)
       <div class="card my-3">

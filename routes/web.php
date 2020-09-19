@@ -30,3 +30,5 @@ use App\Http\Controllers\FormsController;
 Route::post('/contact', 'FormsController@send');
 
 Route::resource('articles', 'ArticlesController')->middleware('visit');
+
+Route::get('/statistics', 'StatisticsController@index')->middleware('visit');

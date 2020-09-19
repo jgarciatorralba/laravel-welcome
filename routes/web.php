@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('visit');
 
 // Additional routing created during the project realization
 use App\Http\Controllers\PagesController;
@@ -29,4 +29,4 @@ Route::get('/contact', 'PagesController@contact');
 use App\Http\Controllers\FormsController;
 Route::post('/contact', 'FormsController@send');
 
-Route::resource('articles', 'ArticlesController');
+Route::resource('articles', 'ArticlesController')->middleware('visit');

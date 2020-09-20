@@ -74115,14 +74115,18 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Custom JS files
+// Import Bootstrap
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Import other JS files
 
 
 __webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
 
 __webpack_require__(/*! ./Chart */ "./resources/js/Chart.js");
 
-__webpack_require__(/*! ./myChart */ "./resources/js/myChart.js");
+__webpack_require__(/*! ./myChart */ "./resources/js/myChart.js"); // Additional custom JS code
+
+
+$('.alert').delay(2000).fadeOut(2000);
 
 /***/ }),
 

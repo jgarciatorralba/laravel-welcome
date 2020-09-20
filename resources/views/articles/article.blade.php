@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
       <div class="mb-3 card-text">
-        {{$article->content}}
+        {!!$article->content!!}
       </div>
       <hr class="my-0">
       <div class="mt-3">

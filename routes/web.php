@@ -32,3 +32,4 @@ Route::post('/contact', 'FormsController@send');
 Route::resource('articles', 'ArticlesController')->middleware('visit');
 
 Route::get('/statistics', 'StatisticsController@index')->middleware('visit');
+Route::get('/statistics/get', 'StatisticsController@getVisits')->middleware('visit');

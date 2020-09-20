@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container text-center">
+  <div class="container text-center mb-5">
     <div class="container chart-container d-flex justify-content-center align-items-center border">
       <p id="fallback-text">Your stats will be displayed here.</p>
       <canvas class="d-none" id="myChart" width="600" height="300">

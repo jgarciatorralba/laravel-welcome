@@ -16,6 +16,13 @@ $('#stats-btn').on('click', function () {
 
         colorSet = random_rgba_pair(0.2);
 
+        $('#myChart').remove();
+        var chart = $('<canvas>').addClass('d-none').attr('id', 'myChart').css({
+            'width': '600px',
+            'height': '300px'
+        });
+        $('.chart-container').append(chart);
+
         var ctx = document.getElementById('myChart');
         var myChart = new Chart(ctx, {
             type: 'bar',

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mb-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -25,7 +25,7 @@
                     <hr>
                     <h3>Your Articles</h3>
                     @if(count($articles) > 0)
-                        <table class="table table-striped">
+                        <table class="table table-striped my-0">
                             <tr>
                                 <th>Title</th>
                                 <th></th>

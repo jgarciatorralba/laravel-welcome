@@ -9,7 +9,8 @@
 
 .bi-journal-text,
 .bi-journal-minus,
-.bi-journal-plus {
+.bi-journal-plus,
+.bi-bar-chart-line-fill {
     position: relative;
     bottom: 0.1rem;
 }
@@ -29,4 +30,8 @@ td.title {
 .navbar-brand:hover {
     color: black !important;
     cursor: pointer;
+}
+
+.chart-container {
+    min-height: 350px;
 }

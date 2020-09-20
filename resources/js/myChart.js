@@ -1,59 +1,62 @@
 const projectURL = 'http://127.0.0.1:8000/';
 
-$.ajax({
-    url: projectURL + 'statistics',
-    method: 'GET'
-}).done(response => {
-    console.log(response);
-    // console.log(JSON.parse(response));
+$('#stats-btn').on('click', function () {
+    $.ajax({
+        url: projectURL + 'statistics/get',
+        method: 'GET'
+    }).done(response => {
+        let visits = JSON.parse(response);
 
-    // response = JSON.parse(response);
-    // if (typeof (response) == 'object') {
-    //     fillForm(response)
-    // } else if (response !== false) {
-    //     $('.error').text(response)
-    //         .fadeIn(800)
-    //         .delay(4000)
-    //         .fadeOut(800);
-    // }
+        let labels = [];
+        let data = [];
+        visits.forEach(item => {
+            labels.push(item.path);
+            data.push(item.num_visits);
+        });
+
+        colorSet = random_rgba_pair(0.2);
+
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# of Visits',
+                    data: data,
+                    backgroundColor: colorSet[0],
+                    borderColor: colorSet[1],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        $('#fallback-text').addClass('d-none');
+        $('#myChart').removeClass('d-none');
+    });
 });
 
+// Helper functions
+function random_rgba_pair(alpha) {
+    var round = Math.round,
+        random = Math.random,
+        colors = 255;
 
-var ctx = document.getElementById('myChart');
+    var r = round(random() * colors);
+    var g = round(random() * colors);
+    var b = round(random() * colors);
 
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
+    var color1 = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    var color2 = 'rgba(' + r + ',' + g + ',' + b + ',' + '1)';
+
+    return [color1, color2];
+}

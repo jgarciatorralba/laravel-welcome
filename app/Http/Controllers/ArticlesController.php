@@ -114,7 +114,7 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -122,7 +122,9 @@ class ArticlesController extends Controller
             'content' => 'required|min:2000'
         ]);
 
-        $article = Article::find($id);
+        $articles = Article::where('slug', $slug)->get();
+        $article = $articles[0];
+
         $article->title = $request->input('title');
         $article->summary = $request->input('summary');
         $article->content = $request->input('content');
@@ -138,9 +140,10 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $article = Article::find($id);
+        $articles = Article::where('slug', $slug)->get();
+        $article = $articles[0];
 
         // Check for the correct user
         if (Auth::id() !== $article->user_id) {

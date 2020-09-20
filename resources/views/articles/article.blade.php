@@ -34,7 +34,7 @@
               </svg>
               Edit
             </a>
-            <form class="d-inline" action="/articles/{{$article->id}}" method="POST">
+            <form class="d-inline" action="/articles/{{$article->slug}}" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <button class="btn btn-secondary">

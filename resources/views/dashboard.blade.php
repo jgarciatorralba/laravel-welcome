@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    {{-- {{ __('You are logged in!') }} --}}
                     <a href="/articles/create" class="btn btn-primary">
                         <svg width="1rem" height="1rem" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
@@ -48,7 +47,7 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <form class="d-inline" action="/articles/{{$article->id}}" method="POST">
+                                        <form class="d-inline" action="/articles/{{$article->slug}}" method="POST">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <button class="btn btn-sm btn-secondary">

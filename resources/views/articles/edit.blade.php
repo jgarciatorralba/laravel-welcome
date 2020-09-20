@@ -7,7 +7,7 @@
         Edit Article
       </h1>
 
-      {!! Form::open(['action' => ['ArticlesController@update', $article->id], 'method' => 'POST', 'autocomplete' => 'off']) !!}
+      {!! Form::open(['action' => ['ArticlesController@update', $article->slug], 'method' => 'POST', 'autocomplete' => 'off']) !!}
         <div class="form-group">
           {{Form::label('title', 'Title')}}
           {{Form::text('title', $article->title, ['class' => 'form-control', 'placeholder' => 'Title'])}}

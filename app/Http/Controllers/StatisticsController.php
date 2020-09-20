@@ -27,12 +27,17 @@ class StatisticsController extends Controller
 
     public function index()
     {
-        // $visits = Visit::all();
+        return view('stats.overview');
+    }
+
+    public function getVisits()
+    {
         $visits = DB::select(
             'select path, count(*) as num_visits from visits 
+                where user_id = ' . Auth::id() . '
                 group by path 
                 order by num_visits desc'
         );
-        return view('stats.overview')->with('visits', $visits);
+        echo json_encode($visits);
     }
 }

@@ -35,7 +35,7 @@
         </footer>
     </div>
 
-    <script src = "https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+    <script src="{{ asset("js/libraries/ckeditor4/ckeditor.js") }}"></script>
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script>

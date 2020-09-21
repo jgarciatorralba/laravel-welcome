@@ -3,7 +3,7 @@ require('./bootstrap');
 
 // Import other JS files
 require('./navbar');
-require('./Chart');
+require('../../node_modules/chart.js/dist/Chart');
 require('./myChart');
 
 // Additional custom JS code

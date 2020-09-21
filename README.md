@@ -314,3 +314,4 @@ Faker is a PHP library that generates fake data for you. Whether you need to boo
 ## ✒️ Author
 
 -   **Jorge García Torralba** &#8594; [jorge-garcia](https://code.assemblerschool.com/jorge-garcia/)
+-   Followed this ***YouTube*** series by [**Traversy Media**](https://github.com/bradtraversy) as a guidance &#8594; [_Laravel From Scratch_](https://www.youtube.com/playlist?list=PLillGF-RfqbYhQsN5WMXy6VsDMKGadrJ-)

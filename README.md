@@ -1,6 +1,6 @@
 <img align="right" src="https://raw.githubusercontent.com/laravel/art/master/logo-mark/5%20svg/2%20cmyk/1%20Full%20Color/laravel-mark-cmyk-red.svg" height="70">
 
-# 💊 Welcome Laravel
+# Laravel Welcome
 
 _Laravel, Frameworks, PHP, OOP paradigm._
 
